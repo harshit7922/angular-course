@@ -9,6 +9,7 @@ import {CourseTitleComponent} from './course-title/course-title.component';
 import {CourseCardComponent} from './courses/course-card/course-card.component';
 import {CourseImageComponent} from './courses/course-image/course-image.component';
 import {NgForOf} from '@angular/common';
+import { HighlightedDirective } from './directives/highlighted.directive';
 
 
 @Component({
@@ -18,7 +19,8 @@ import {NgForOf} from '@angular/common';
     imports: [
         CourseCardComponent,
         CourseImageComponent,
-        NgForOf
+        NgForOf,
+        HighlightedDirective
     ]
 })
 export class AppComponent implements OnInit {
