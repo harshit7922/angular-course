@@ -6,6 +6,7 @@ import {bootstrapApplication, BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app/app.component';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HighlightedDirective } from './app/directives/highlighted.directive';
 
 if (environment.production) {
   enableProdMode();
@@ -15,7 +16,8 @@ bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(BrowserModule),
     provideAnimations(),
-    provideHttpClient(withInterceptorsFromDi())
+    provideHttpClient(withInterceptorsFromDi()),
+    HighlightedDirective
   ],
 })
   .catch(err => console.log(err));

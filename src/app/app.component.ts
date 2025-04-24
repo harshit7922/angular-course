@@ -9,13 +9,15 @@ import {CourseTitleComponent} from './course-title/course-title.component';
 import {CourseCardComponent} from './courses/course-card/course-card.component';
 import {CourseImageComponent} from './courses/course-image/course-image.component';
 import {NgForOf} from '@angular/common';
-import { HighlightedDirective } from './directives/highlighted.directive';
+import { HighlightedDirective } from './directives/highlighted.directive'; // Import the directive
+
 
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
+    standalone: true,
     imports: [
         CourseCardComponent,
         CourseImageComponent,
