@@ -59,5 +59,10 @@ export class AppComponent implements OnInit {
             );
     }
 
+    toggleHighlighted(isHighlighted: boolean) {
+        console.log('Toggle highlighted event:', isHighlighted);
+        // Handle the toggle event here
+        }
+
 
 }
