@@ -1,4 +1,4 @@
-import { Directive, Input, HostBinding, input } from '@angular/core';
+import { Directive, Input, HostBinding,HostListener } from '@angular/core';
 
 @Directive({
   selector: '[highlighted]',
@@ -23,5 +23,17 @@ export class HighlightedDirective {
   get disbled() {
     console.log('disabled getter called');
     return this.highlighted ? null : true; // Return null to remove the attribute when highlighted is true
+  }
+
+  @HostListener('mouseover')
+  mouseOver() {
+    console.log('Mouse over event triggered');
+    this.highlighted = true; // Set highlighted to true on mouseover
+  }
+
+  @HostListener('mouseleave')
+  mouseLeave() {
+    console.log('Mouse leave event triggered');
+    this.highlighted = false; // Set highlighted to false on mouseleave
   }
 }
