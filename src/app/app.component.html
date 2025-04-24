@@ -1,4 +1,4 @@
-<div [highlighted]="true" class="top-menu">
+<div class="top-menu">
 
   <img class="logo"
        src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
@@ -6,28 +6,17 @@
 </div>
 
 <div>
-
-  <div [highlighted]="true" >Highlighted Content</div>
-
   <div  class="courses" >
-
     <course-card  [highlighted]="null" *ngFor="let course of  courses  "
                   (toggleHighlighted) = "toggleHighlighted($event)"
                  (courseChanged)="save($event)"
                  #highlighter="hl"
                  type="beginner"
                  [course]="course">
-<!-- <ng-template *ngxUnless="false"> -->
-      <course-image [src]="course.iconUrl" *ngxUnless="!course.iconUrl" (dblclick)="highlighter.toggle()"     
-      ></course-image>
-<!-- </ng-template> -->
-
+      <course-image [src]="course.iconUrl" *ngxUnless="!course.iconUrl" 
+      (dblclick)="highlighter.toggle()" ></course-image>
     </course-card>
-
-
   </div>
-
-
 </div>
 
 
