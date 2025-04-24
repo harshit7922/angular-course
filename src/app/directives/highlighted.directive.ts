@@ -10,10 +10,10 @@ export class HighlightedDirective {
     console.log('Highlighted directive initialized');
   }
 
-  @HostBinding('className') // Correctly bind to the 'class.highlighted' property
+  @HostBinding('style.border') // Correctly bind to the 'class.highlighted' property
   get cssClass() {
     console.log('cssClass getter called');
   
-    return "highlighted"; // Return true to apply the class
+    return "2px solid red"; // Return true to apply the class
   }
 }
