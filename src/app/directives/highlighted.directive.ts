@@ -1,4 +1,4 @@
-import { Directive, HostBinding } from '@angular/core';
+import { Directive, Input, HostBinding, input } from '@angular/core';
 
 @Directive({
   selector: '[highlighted]',
@@ -6,14 +6,16 @@ import { Directive, HostBinding } from '@angular/core';
 })
 export class HighlightedDirective {
 
+  @Input('highlighted') 
+  highlighted: boolean = false; // Use the correct property name
   constructor() {
     console.log('Highlighted directive initialized');
   }
 
-  @HostBinding('style.border') // Correctly bind to the 'class.highlighted' property
+  @HostBinding('class.highlighted') // Correctly bind to the 'class.highlighted' property
   get cssClass() {
     console.log('cssClass getter called');
   
-    return "2px solid red"; // Return true to apply the class
+    return this.highlighted; // Return true to apply the class
   }
 }
