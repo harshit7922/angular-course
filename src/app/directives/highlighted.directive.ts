@@ -18,4 +18,10 @@ export class HighlightedDirective {
   
     return this.highlighted; // Return true to apply the class
   }
+
+  @HostBinding('attr.disabled')
+  get disbled() {
+    console.log('disabled getter called');
+    return this.highlighted ? null : true; // Return null to remove the attribute when highlighted is true
+  }
 }
