@@ -7,17 +7,18 @@
 
 <div>
 
-  <div [highlighted]="true"  >Highlighted Content</div>
+  <div [highlighted]="true" >Highlighted Content</div>
 
   <div  class="courses" >
 
     <course-card  [highlighted]="null" *ngFor="let course of  courses  "
                   (toggleHighlighted) = "toggleHighlighted($event)"
                  (courseChanged)="save($event)"
+                 #highlighter="hl"
                  type="beginner"
                  [course]="course">
 
-      <course-image [src]="course.iconUrl"></course-image>
+      <course-image [src]="course.iconUrl" (dblclick)="highlighter.toggle()"></course-image>
 
     </course-card>
 

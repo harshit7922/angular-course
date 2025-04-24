@@ -2,7 +2,8 @@ import { Directive, Input, HostBinding,HostListener, Output, EventEmitter } from
 
 @Directive({
   selector: '[highlighted]',
-  standalone: true
+  standalone: true,
+  exportAs: 'hl' // Export the directive for use in templates
 })
 export class HighlightedDirective {
 
@@ -36,6 +37,12 @@ export class HighlightedDirective {
   @HostListener('mouseleave')
   mouseLeave() {
     this.highlighted = false; // Set highlighted to false on mouseleave
+    this.toggleHighlighted.emit(this.highlighted); // Emit the toggle event
+  }
+
+  toggle()
+  {
+    this.highlighted = !this.highlighted; // Toggle the highlighted state
     this.toggleHighlighted.emit(this.highlighted); // Emit the toggle event
   }
 }
