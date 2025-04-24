@@ -7,6 +7,7 @@ import {AppComponent} from './app/app.component';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { HighlightedDirective } from './app/directives/highlighted.directive';
+import { NgxUnlessDirective } from './app/directives/ngx-unless.directive';
 
 if (environment.production) {
   enableProdMode();
@@ -17,7 +18,8 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(BrowserModule),
     provideAnimations(),
     provideHttpClient(withInterceptorsFromDi()),
-    HighlightedDirective
+    HighlightedDirective,
+    NgxUnlessDirective
   ],
 })
   .catch(err => console.log(err));

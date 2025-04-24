@@ -17,8 +17,10 @@
                  #highlighter="hl"
                  type="beginner"
                  [course]="course">
-
-      <course-image [src]="course.iconUrl" (dblclick)="highlighter.toggle()"></course-image>
+<!-- <ng-template *ngxUnless="false"> -->
+      <course-image [src]="course.iconUrl" *ngxUnless="!course.iconUrl" (dblclick)="highlighter.toggle()"     
+      ></course-image>
+<!-- </ng-template> -->
 
     </course-card>
 

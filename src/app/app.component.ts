@@ -9,8 +9,8 @@ import {CourseTitleComponent} from './course-title/course-title.component';
 import {CourseCardComponent} from './courses/course-card/course-card.component';
 import {CourseImageComponent} from './courses/course-image/course-image.component';
 import {NgForOf} from '@angular/common';
-import { HighlightedDirective } from './directives/highlighted.directive'; // Import the directive
-
+import { HighlightedDirective } from './directives/highlighted.directive'; 
+import { NgxUnlessDirective } from './directives/ngx-unless.directive';
 
 
 @Component({
@@ -22,7 +22,8 @@ import { HighlightedDirective } from './directives/highlighted.directive'; // Im
         CourseCardComponent,
         CourseImageComponent,
         NgForOf,
-        HighlightedDirective
+        HighlightedDirective,
+        NgxUnlessDirective
     ]
 })
 export class AppComponent implements OnInit {
